@@ -4,7 +4,38 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Darwin Cantillo — E-commerce Support, Shopify VA & Web Developer</title>
-<meta name="description" content="Darwin Cantillo is a Philippines-based customer support manager, Shopify virtual assistant, content operations specialist, and web developer. Founder of WordWise PH.">
+<meta name="description" content="Darwin Cantillo is a Top Rated Plus, Philippines-based customer support manager, Shopify virtual assistant, content operations specialist, and web developer. Founder of WordWise PH.">
+<link rel="canonical" href="https://darwin-portfolio.vercel.app/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23F0A63A'/%3E%3Ctext x='50' y='70' font-family='Arial' font-size='58' font-weight='bold' text-anchor='middle' fill='%23101F30'%3ED%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://darwin-portfolio.vercel.app/">
+<meta property="og:title" content="Darwin Cantillo — E-commerce Support, Shopify VA & Web Developer">
+<meta property="og:description" content="Top Rated Plus on Upwork · 100% Job Success · 4,080 hours delivered. Customer support, Shopify stores, content ops, and web apps for businesses on four continents.">
+<meta property="og:image" content="https://darwin-portfolio.vercel.app/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Darwin Cantillo — E-commerce Support, Shopify VA & Web Developer">
+<meta name="twitter:description" content="Top Rated Plus on Upwork · 100% Job Success · 4,080 hours delivered.">
+<meta name="twitter:image" content="https://darwin-portfolio.vercel.app/og-image.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Darwin Cantillo",
+  "jobTitle": "E-commerce Support Manager, Shopify Virtual Assistant & Web Developer",
+  "url": "https://darwin-portfolio.vercel.app/",
+  "email": "mailto:darcant01@gmail.com",
+  "address": {"@type": "PostalAddress", "addressCountry": "PH"},
+  "sameAs": [
+    "https://www.upwork.com/freelancers/~018954f2a4c1543d7b",
+    "https://www.linkedin.com/in/darwin-cantillo-a35065252/",
+    "https://www.facebook.com/darwin.cantillo.73/",
+    "https://wordwiseph.com/"
+  ],
+  "knowsAbout": ["Customer Support Management", "Shopify", "WooCommerce", "Data Entry", "Content Operations", "Web Development", "Supabase", "AppSheet"]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Public+Sans:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -141,18 +172,40 @@ header{
 .progress{height:6px;border-radius:99px;background:#24374e;overflow:hidden;margin-top:8px}
 .progress i{display:block;height:100%;background:var(--sun);border-radius:99px}
 
-/* ---------- Trust strip ---------- */
+/* ---------- Trust marquee ---------- */
 .trust{padding:0 0 10px}
-.trust-inner{
+.trust-label{
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--slate);text-align:center;
+  display:block;margin-bottom:18px;
+}
+.marquee{
+  position:relative;overflow:hidden;
   border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-  padding:22px 0;display:flex;align-items:center;gap:14px 40px;flex-wrap:wrap;justify-content:space-between;
+  padding:20px 0;
 }
-.trust-inner span.lbl{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--slate)}
-.trust-inner a{
-  font-family:var(--display);font-weight:700;font-size:1rem;text-decoration:none;
-  color:var(--slate);transition:color .2s;
+.marquee::before,.marquee::after{
+  content:"";position:absolute;top:0;bottom:0;width:90px;z-index:2;pointer-events:none;
 }
-.trust-inner a:hover{color:var(--ink)}
+.marquee::before{left:0;background:linear-gradient(90deg,var(--porcelain),transparent)}
+.marquee::after{right:0;background:linear-gradient(270deg,var(--porcelain),transparent)}
+.marquee-track{
+  display:flex;align-items:center;gap:44px;width:max-content;
+  animation:marquee 32s linear infinite;
+}
+.marquee:hover .marquee-track{animation-play-state:paused}
+@keyframes marquee{to{transform:translateX(-50%)}}
+.marquee-track a{
+  font-family:var(--display);font-weight:700;font-size:1.05rem;text-decoration:none;
+  color:var(--slate);transition:color .2s;white-space:nowrap;
+}
+.marquee-track a:hover{color:var(--ink)}
+.marquee-track .sep{color:var(--sun);font-size:.8rem;user-select:none}
+@media (prefers-reduced-motion: reduce){
+  .marquee-track{animation:none;width:auto;flex-wrap:wrap;justify-content:center;row-gap:12px}
+  .marquee-track .dup{display:none}
+  .marquee::before,.marquee::after{display:none}
+}
 
 /* ---------- Services ---------- */
 .services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
@@ -197,6 +250,22 @@ header{
 .job p{color:#9FB2C4;font-size:.92rem;flex:1}
 .job .job-foot{display:flex;gap:8px;flex-wrap:wrap}
 .job.founder{border:1px solid var(--sun);background:linear-gradient(150deg,#1d3049 0%,#182b41 60%)}
+
+/* ---------- Testimonials ---------- */
+.quotes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.quote{
+  background:var(--paper);border:1px solid var(--line);border-radius:16px;
+  padding:32px;position:relative;
+}
+.quote::before{
+  content:"“";font-family:var(--display);font-size:4.5rem;font-weight:800;
+  color:var(--sun);position:absolute;top:6px;left:22px;line-height:1;
+}
+.quote .stars{color:var(--sun);letter-spacing:3px;font-size:1rem;margin-bottom:14px;padding-top:26px}
+.quote blockquote{font-family:var(--display);font-size:1.18rem;font-weight:600;line-height:1.45;margin-bottom:18px}
+.quote figcaption{font-family:var(--mono);font-size:.72rem;color:var(--slate);letter-spacing:.06em}
+.quote figcaption strong{color:var(--ink)}
+@media (max-width:900px){.quotes-grid{grid-template-columns:1fr}}
 .founder-stats{display:flex;gap:24px;margin-top:4px}
 .founder-stats div strong{font-family:var(--display);font-size:1.5rem;font-weight:800;color:#fff;display:block}
 .founder-stats div span{font-family:var(--mono);font-size:.62rem;color:#8FA3B8;letter-spacing:.08em;text-transform:uppercase}
@@ -222,7 +291,34 @@ header{
   border:1px solid var(--line);border-radius:999px;padding:7px 14px;color:var(--ink);
 }
 
-/* ---------- Contact ---------- */
+/* ---------- FAQ ---------- */
+.faq-list{max-width:760px}
+.faq{border:1px solid var(--line);border-radius:14px;background:var(--paper);margin-bottom:12px;overflow:hidden}
+.faq summary{
+  cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;
+  gap:16px;padding:20px 24px;font-family:var(--display);font-weight:700;font-size:1.05rem;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);font-size:1.3rem;color:var(--sun);font-weight:600;transition:transform .2s}
+.faq[open] summary::after{transform:rotate(45deg)}
+.faq summary:focus-visible{outline:3px solid var(--sun);outline-offset:-3px}
+.faq .faq-a{padding:0 24px 22px;color:var(--slate);font-size:.95rem}
+
+/* ---------- Contact form ---------- */
+.form-grid{max-width:600px;margin:0 auto 28px;text-align:left;position:relative;display:grid;gap:16px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field label{display:block;font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--slate);margin-bottom:7px;font-weight:600}
+.field input,.field select,.field textarea{
+  width:100%;padding:13px 15px;border:1.5px solid var(--line);border-radius:10px;
+  font-family:var(--body);font-size:.95rem;color:var(--ink);background:var(--porcelain);
+}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--sun);background:#fff}
+.field textarea{resize:vertical;min-height:120px}
+.form-status{font-family:var(--mono);font-size:.8rem;margin-top:4px;min-height:1.2em}
+.form-status.ok{color:var(--reef)}
+.form-status.err{color:#C0512F}
+.hp{position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden}
+@media (max-width:520px){.form-row{grid-template-columns:1fr}}
 .contact{padding-bottom:100px}
 .contact-card{
   background:var(--paper);border:1px solid var(--line);border-radius:24px;
@@ -279,8 +375,10 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:.82rem;color:va
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
       <li><a href="#work">Work</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
       <li><a href="#process">Process</a></li>
       <li><a href="#about">About</a></li>
+      <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="clock" aria-label="Current time in Manila">
@@ -297,6 +395,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:.82rem;color:va
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
+      <span style="display:inline-flex;align-items:center;gap:8px;background:var(--reef-soft);border:1px solid var(--reef);color:var(--reef);font-family:var(--mono);font-size:.72rem;font-weight:600;letter-spacing:.08em;border-radius:999px;padding:7px 16px;margin-bottom:20px"><span class="pulse" style="width:8px;height:8px;border-radius:50%;background:var(--reef);display:inline-block"></span>AVAILABLE FOR NEW CLIENTS — JULY 2026</span>
       <p class="eyebrow">E-commerce support · Shopify VA · Web developer</p>
       <h1>The person behind <span class="accent">four screens</span> — so you can run <span class="sun-word">one business</span>.</h1>
       <p class="lede">I'm Darwin, a Philippines-based specialist who manages customer support desks, Shopify stores, and content pipelines for e-commerce brands — and builds web products of my own. You hand me the operations; you get back your time.</p>
@@ -305,9 +404,10 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:.82rem;color:va
         <a class="btn btn-ghost" href="https://www.upwork.com/freelancers/~018954f2a4c1543d7b" target="_blank" rel="noopener">Hire me on Upwork ↗</a>
       </div>
       <div class="hero-meta">
-        <div><strong>4 active roles</strong>across 3 countries</div>
-        <div><strong>PH · US · EU</strong>timezone coverage</div>
-        <div><strong>1 founder</strong>of WordWise PH</div>
+        <div><strong>Top Rated Plus</strong>top tier on Upwork</div>
+        <div><strong>100%</strong>Job Success Score</div>
+        <div><strong>4,080</strong>hours delivered</div>
+        <div><strong>33</strong>jobs completed</div>
       </div>
     </div>
 
@@ -368,13 +468,27 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:.82rem;color:va
 </section>
 
 <!-- ================= TRUST ================= -->
-<div class="trust wrap">
-  <div class="trust-inner reveal">
-    <span class="lbl">Trusted daily by</span>
-    <a href="https://goodorigins.shop/" target="_blank" rel="noopener">Good Origins</a>
-    <a href="https://weiswesternwear.com/" target="_blank" rel="noopener">Weis Western Wear</a>
-    <a href="https://www.smart-home-fox.de/" target="_blank" rel="noopener">Smart Home Fox</a>
-    <a href="https://wordwiseph.com/" target="_blank" rel="noopener">WordWise PH</a>
+<div class="trust wrap reveal">
+  <span class="trust-label">Trusted by businesses on four continents</span>
+  <div class="marquee">
+    <div class="marquee-track">
+      <a href="https://goodorigins.shop/" target="_blank" rel="noopener">Good Origins</a><span class="sep">✦</span>
+      <a href="https://weiswesternwear.com/" target="_blank" rel="noopener">Weis Western Wear</a><span class="sep">✦</span>
+      <a href="https://www.smart-home-fox.de/" target="_blank" rel="noopener">Smart Home Fox</a><span class="sep">✦</span>
+      <a href="https://mythrojan.com/" target="_blank" rel="noopener">Mythrojan</a><span class="sep">✦</span>
+      <a href="https://everywatch.com/" target="_blank" rel="noopener">EveryWatch</a><span class="sep">✦</span>
+      <a href="https://www.earlyday.com/" target="_blank" rel="noopener">EarlyDay</a><span class="sep">✦</span>
+      <a href="https://gte.bassam.sa/" target="_blank" rel="noopener">GTE Saudi Arabia</a><span class="sep">✦</span>
+      <a href="https://wordwiseph.com/" target="_blank" rel="noopener">WordWise PH</a><span class="sep">✦</span>
+      <a class="dup" href="https://goodorigins.shop/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">Good Origins</a><span class="sep dup" aria-hidden="true">✦</span>
+      <a class="dup" href="https://weiswesternwear.com/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">Weis Western Wear</a><span class="sep dup" aria-hidden="true">✦</span>
+      <a class="dup" href="https://www.smart-home-fox.de/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">Smart Home Fox</a><span class="sep dup" aria-hidden="true">✦</span>
+      <a class="dup" href="https://mythrojan.com/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">Mythrojan</a><span class="sep dup" aria-hidden="true">✦</span>
+      <a class="dup" href="https://everywatch.com/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">EveryWatch</a><span class="sep dup" aria-hidden="true">✦</span>
+      <a class="dup" href="https://www.earlyday.com/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">EarlyDay</a><span class="sep dup" aria-hidden="true">✦</span>
+      <a class="dup" href="https://gte.bassam.sa/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">GTE Saudi Arabia</a><span class="sep dup" aria-hidden="true">✦</span>
+      <a class="dup" href="https://wordwiseph.com/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">WordWise PH</a><span class="sep dup" aria-hidden="true">✦</span>
+    </div>
   </div>
 </div>
 
@@ -414,13 +528,13 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:.82rem;color:va
       <div class="svc reveal">
         <div class="corner"><span>03</span></div>
         <p class="svc-mono">Content operations</p>
-        <h3>Article Uploading &amp; CMS Management</h3>
-        <p>Long-form content published cleanly and consistently — formatting, images, internal links, and tables all in place.</p>
+        <h3>Article Uploading, CMS &amp; Data Entry</h3>
+        <p>Long-form content and product data published cleanly and consistently — formatting, images, links, and records all verified and in place.</p>
         <ul>
           <li>WordPress &amp; CMS publishing with pixel-perfect formatting</li>
+          <li>High-volume data entry, verification &amp; moderation</li>
           <li>Image optimization, alt text &amp; comparison tables</li>
           <li>Internal linking &amp; on-page SEO hygiene</li>
-          <li>Reliable publishing schedules, even at volume</li>
         </ul>
       </div>
       <div class="svc reveal">
@@ -443,8 +557,8 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:.82rem;color:va
 <section id="work" class="work">
   <div class="wrap">
     <div class="section-head reveal">
-      <p class="eyebrow">Current work</p>
-      <h2>Four businesses trust me with their daily operations.</h2>
+      <p class="eyebrow">Client work</p>
+      <h2>Businesses on four continents trust me with their operations.</h2>
       <p>Different industries, different countries, one standard: things get done, on time, without being chased.</p>
     </div>
     <div class="work-grid">
@@ -463,8 +577,44 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:.82rem;color:va
       <div class="job reveal">
         <span class="role">Article Uploader · Content Ops</span>
         <h3><a href="https://www.smart-home-fox.de/" target="_blank" rel="noopener">Smart Home Fox ↗</a></h3>
-        <p>Publishing in-depth smart home reviews and comparison articles for a German tech publication — precise formatting, image placement, tables, and links, delivered on schedule at volume.</p>
-        <div class="job-foot"><span class="tag tag-ok">CMS</span><span class="tag tag-blue">PUBLISHING</span></div>
+        <p>Publishing in-depth smart home reviews and comparison articles for a German tech publication — precise formatting, image placement, tables, and links, delivered on schedule at volume. Rated ★ 5.0 for the initial 178-hour engagement, then kept on the team.</p>
+        <div class="job-foot"><span class="tag tag-ok">★ 5.0 RATED</span><span class="tag tag-blue">CMS</span><span class="tag tag-sun">PUBLISHING</span></div>
+      </div>
+      <div class="job reveal">
+        <span class="role">Database &amp; App Developer</span>
+        <h3><a href="https://mythrojan.com/" target="_blank" rel="noopener">Mythrojan ↗</a></h3>
+        <p>Built a real-time cloud inventory database and app for a US medieval goods manufacturer — replacing warehouse spreadsheets — then handled implementation and trained the team. Rehired in 2023–2024 for custom AppSheet order-form projects. Every contract rated ★ 5.0.</p>
+        <div class="job-foot"><span class="tag tag-ok">★ 5.0 RATED</span><span class="tag tag-sun">REPEAT CLIENT</span><span class="tag tag-blue">CLOUD DATABASE</span></div>
+      </div>
+      <div class="job reveal">
+        <span class="role">Data Moderator · Data Operations</span>
+        <h3><a href="https://everywatch.com/" target="_blank" rel="noopener">EveryWatch ↗</a></h3>
+        <p>Verified and maintained listing data for the world's most comprehensive luxury watch market-intelligence platform — high-volume CMS data encoding, accuracy and error checks against strict quality standards, and daily reporting. Rated ★ 5.0 by the client.</p>
+        <div class="job-foot"><span class="tag tag-ok">★ 5.0 RATED</span><span class="tag tag-blue">178 HOURS</span><span class="tag tag-sun">DATA OPS</span></div>
+      </div>
+      <div class="job reveal">
+        <span class="role">Data Operations · CRM</span>
+        <h3><a href="https://www.earlyday.com/" target="_blank" rel="noopener">EarlyDay ↗</a></h3>
+        <p>Processed and uploaded candidate resume data into the CRM for a US hiring platform for preschool teachers — 428 hours of fast, accurate data work while adapting to constantly evolving processes. Rated ★ 5.0 by the client.</p>
+        <div class="job-foot"><span class="tag tag-ok">★ 5.0 RATED</span><span class="tag tag-blue">428 HOURS</span><span class="tag tag-sun">CRM DATA</span></div>
+      </div>
+      <div class="job reveal">
+        <span class="role">App Developer · Contract</span>
+        <h3><a href="https://myteprof.com/" target="_blank" rel="noopener">myTE Professional Suite ↗</a></h3>
+        <p>Year-long engagement with a Toronto medical-education company, building a web-based survey app using no/low-code tools — 432 hours of development across a 12-hour timezone gap. The founder publicly recommended Darwin on LinkedIn.</p>
+        <div class="job-foot"><span class="tag tag-ok">432 HOURS</span><span class="tag tag-blue">12-MONTH CONTRACT</span><span class="tag tag-sun">NO/LOW-CODE</span></div>
+      </div>
+      <div class="job reveal">
+        <span class="role">WooCommerce Data Specialist</span>
+        <h3><a href="https://gte.bassam.sa/" target="_blank" rel="noopener">General Trading &amp; Equipment ↗</a></h3>
+        <p>15-month engagement with a leading Saudi construction-equipment dealer (est. 1976, official Bobcat distributor) — entering and maintaining thousands of product listings across their WooCommerce catalog with verified specs and documentation. Rated ★ 5.0.</p>
+        <div class="job-foot"><span class="tag tag-ok">★ 5.0 RATED</span><span class="tag tag-blue">15 MONTHS</span><span class="tag tag-sun">WOOCOMMERCE</span></div>
+      </div>
+      <div class="job reveal">
+        <span class="role">Support Rep → Support Manager</span>
+        <h3>Kiyagi Lights <span style="font-family:var(--mono);font-size:.62rem;font-weight:400;color:#8FA3B8;letter-spacing:.08em">2023–2025 · UNDER PREVIOUS OWNERSHIP</span></h3>
+        <p>Nearly three years running day-to-day operations for a lighting e-commerce brand — hired as a customer support representative and promoted to manager, leading the support team until the company was sold in late 2025. 1,882 logged hours, rated ★ 5.0.</p>
+        <div class="job-foot"><span class="tag tag-ok">★ 5.0 RATED</span><span class="tag tag-blue">1,882 HOURS</span><span class="tag tag-sun">PROMOTED TO MANAGER</span></div>
       </div>
       <div class="job founder reveal">
         <span class="role">Founder &amp; Developer</span>
@@ -476,6 +626,72 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:.82rem;color:va
           <div><strong>1</strong><span>Person team</span></div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIALS ================= -->
+<section id="testimonials">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Client feedback</p>
+      <h2>Verified reviews, straight from Upwork.</h2>
+      <p>Real written feedback from clients in North America and Europe — quoted verbatim from Upwork reviews and LinkedIn recommendations.</p>
+    </div>
+    <div class="quotes-grid">
+      <figure class="quote reveal">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>"Darwin completed the job of Shopify data entry very fast and accurately! We are continuing to work together on other Shopify-related tasks I have as well. Highly recommended!"</blockquote>
+        <figcaption><strong>Kreatikon Home</strong> · Croatia · Upwork verified, 2023</figcaption>
+      </figure>
+      <figure class="quote reveal">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>"Darwin worked with us for several weeks on a data upload project and was extremely fast, reliable, and communicative. We will definitely work with him again and highly recommend him!"</blockquote>
+        <figcaption><strong>EarlyDay</strong> · United States · Upwork verified, 2023</figcaption>
+      </figure>
+      <figure class="quote reveal">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>"Darwin has always completed his tasks meticulously. He is highly responsive and just generally really pleasant to work with. We were extremely satisfied with his work and can only recommend him."</blockquote>
+        <figcaption><strong>Smart Home Fox</strong> · Germany · Upwork verified, 2023</figcaption>
+      </figure>
+      <figure class="quote reveal">
+        <div class="stars" style="color:var(--reef);font-family:var(--mono);font-size:.68rem;letter-spacing:.14em">LINKEDIN ✓</div>
+        <blockquote>"Darwin was hardworking and dedicated. I would recommend."</blockquote>
+        <figcaption><strong>Esther Bui, MD</strong> · Founder, myTE · LinkedIn, 2023</figcaption>
+      </figure>
+      <figure class="quote reveal">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>"It was a pleasure to work with Darwin! Highly recommended!"</blockquote>
+        <figcaption><strong>Shopify app team</strong> · Estonia · Upwork verified, 2026</figcaption>
+      </figure>
+      <figure class="quote reveal">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>"Darwin is amazing! He helps a lot with day to day operations."</blockquote>
+        <figcaption><strong>Kiyagi Lights</strong> · previous ownership · Upwork verified, 2025</figcaption>
+      </figure>
+      <figure class="quote reveal">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>"Extremely helpful and dedicated, solved problems and followed up on everything. Happy to work with him again on my next project."</blockquote>
+        <figcaption><strong>Mythrojan</strong> · United States · Upwork verified, 2022</figcaption>
+      </figure>
+      <figure class="quote reveal">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>"Darwin is great, very professional and easy to work with. This is a repeat contract, and I am sure there will be more."</blockquote>
+        <figcaption><strong>Mythrojan</strong> · United States · Repeat client, 2022–2024</figcaption>
+      </figure>
+    </div>
+    <div class="reveal" style="margin-top:26px;display:flex;flex-wrap:wrap;gap:9px;align-items:center">
+      <span style="font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--slate)">Endorsed by clients as</span>
+      <span class="chip">Collaborative ×6</span>
+      <span class="chip">Clear Communicator ×3</span>
+      <span class="chip">Committed to Quality ×2</span>
+      <span class="chip">Detail Oriented ×2</span>
+      <span class="chip">Professional</span>
+      <span class="chip">Solution Oriented</span>
+      <span class="chip">Reliable</span>
+      <span class="chip" style="border-color:var(--sun);background:var(--sun-soft)">👑 Top Rated Plus</span>
+      <span class="chip" style="border-color:var(--reef);color:var(--reef)">✓ 100% Job Success</span>
+      <span class="chip" style="border-color:var(--reef);color:var(--reef)">✓ ID Verified on Upwork</span>
     </div>
   </div>
 </section>
@@ -521,20 +737,56 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:.82rem;color:va
     <div class="toolbox reveal">
       <h3>Support &amp; store tools</h3>
       <div class="chips">
-        <span class="chip">Shopify</span><span class="chip">Helpdesk / Ticketing</span><span class="chip">Email &amp; Live Chat</span><span class="chip">Order Management</span><span class="chip">Google Workspace</span>
+        <span class="chip">Shopify</span><span class="chip">WooCommerce</span><span class="chip">Gorgias</span><span class="chip">Email &amp; Live Chat</span><span class="chip">Order Management</span><span class="chip">Slack</span><span class="chip">Google Workspace</span>
       </div>
       <h3>Content &amp; publishing</h3>
       <div class="chips">
-        <span class="chip">WordPress / CMS</span><span class="chip">Article Formatting</span><span class="chip">Image Optimization</span><span class="chip">On-page SEO</span>
+        <span class="chip">WordPress / CMS</span><span class="chip">Article Formatting</span><span class="chip">Canva</span><span class="chip">Image Optimization</span><span class="chip">On-page SEO</span>
       </div>
       <h3>Development</h3>
       <div class="chips">
-        <span class="chip">HTML / CSS / JavaScript</span><span class="chip">Supabase</span><span class="chip">Vercel</span><span class="chip">GitHub</span><span class="chip">REST APIs</span>
+        <span class="chip">HTML / CSS / JavaScript</span><span class="chip">AppSheet</span><span class="chip">Supabase</span><span class="chip">Vercel</span><span class="chip">GitHub</span><span class="chip">REST APIs</span>
       </div>
       <h3>Availability</h3>
       <div class="chips">
         <span class="chip">🇵🇭 Manila-based</span><span class="chip">US &amp; EU hours overlap</span><span class="chip">Full-time or part-time</span>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Common questions</p>
+      <h2>Answers before you even ask.</h2>
+    </div>
+    <div class="faq-list reveal">
+      <details class="faq">
+        <summary>What do you charge?</summary>
+        <div class="faq-a">It depends on the scope — ongoing operations roles, project-based builds, and one-off tasks are priced differently. Tell me what you need on a quick call or in an email and I'll give you a clear number up front. Hourly and monthly arrangements both work.</div>
+      </details>
+      <details class="faq">
+        <summary>Can you work in my timezone?</summary>
+        <div class="faq-a">Yes. I'm based in the Philippines and have spent years working with clients in the US, Canada, Germany, and the Middle East — including a year-long project across a 12-hour gap. I schedule overlap hours around your business day, and urgent items don't wait for "my morning."</div>
+      </details>
+      <details class="faq">
+        <summary>Full-time or part-time?</summary>
+        <div class="faq-a">Both. I've held long-term full-time-equivalent roles (1,800+ hours with a single client) and lighter ongoing arrangements of a few hours a week. We size the engagement to your workload, and it can grow as your business does.</div>
+      </details>
+      <details class="faq">
+        <summary>How do we start?</summary>
+        <div class="faq-a">A short discovery call or email exchange, then a paid trial week where I plug into your tools and clear real work. You judge the results before committing to anything ongoing. Most clients know within days whether it's a fit — my reviews suggest it usually is.</div>
+      </details>
+      <details class="faq">
+        <summary>Which tools do you already know?</summary>
+        <div class="faq-a">Shopify and WooCommerce for stores; Gorgias, email, and live chat for support; WordPress and CMS platforms for publishing; Slack and Google Workspace for teamwork; AppSheet, Supabase, Vercel, and GitHub for development. New internal tools? I learn fast — clients have noted I adapt quickly to changing processes.</div>
+      </details>
+      <details class="faq">
+        <summary>Will you sign an NDA?</summary>
+        <div class="faq-a">Of course. I've handled confidential customer data, internal databases, and private business processes for years — data confidentiality has been an explicit requirement in several of my contracts, and I treat it as standard practice.</div>
+      </details>
     </div>
   </div>
 </section>
@@ -545,12 +797,41 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:.82rem;color:va
     <div class="contact-card reveal">
       <h2>Ready to take operations off your plate?</h2>
       <p>Tell me about your store, your support queue, or the thing you keep meaning to build. I usually reply within a few hours.</p>
+      <form class="form-grid" id="inquiry-form" novalidate>
+        <div class="form-row">
+          <div class="field">
+            <label for="f-name">Your name</label>
+            <input id="f-name" name="name" type="text" required autocomplete="name" placeholder="Jane Smith">
+          </div>
+          <div class="field">
+            <label for="f-email">Email</label>
+            <input id="f-email" name="email" type="email" required autocomplete="email" placeholder="jane@yourstore.com">
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-service">What do you need help with?</label>
+          <select id="f-service" name="service">
+            <option>Customer support management</option>
+            <option>Shopify / WooCommerce store management</option>
+            <option>Content upload & data entry</option>
+            <option>Web / app development</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-message">Your message</label>
+          <textarea id="f-message" name="message" required placeholder="Tell me a little about your business and what you need…"></textarea>
+        </div>
+        <div class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+        <button class="btn btn-primary" type="submit" id="f-submit" style="justify-content:center">Send inquiry</button>
+        <p class="form-status" id="f-status" role="status"></p>
+      </form>
       <div class="contact-links">
-        <a class="btn btn-primary" href="mailto:darcant01@gmail.com">Email me — darcant01@gmail.com</a>
+        <a class="btn btn-ghost" href="mailto:darcant01@gmail.com">Or email directly</a>
         <a class="btn btn-ghost" href="https://www.upwork.com/freelancers/~018954f2a4c1543d7b" target="_blank" rel="noopener">Upwork ↗</a>
         <a class="btn btn-ghost" href="https://www.linkedin.com/in/darwin-cantillo-a35065252/" target="_blank" rel="noopener">LinkedIn ↗</a>
       </div>
-      <p class="contact-mini">Manila time now: <span id="mnl-time-2">—</span> · I schedule calls around your timezone.</p>
+      <p class="contact-mini">Top Rated Plus · 100% Job Success on Upwork · Manila time now: <span id="mnl-time-2">—</span> · I schedule calls around your timezone.</p>
     </div>
   </div>
 </section>
@@ -591,6 +872,57 @@ function show(i){
 function auto(){ timer=setInterval(()=>show((idx+1)%screens.length), 4200); }
 tabs.forEach((t,n)=>t.addEventListener('click',()=>{clearInterval(timer);show(n);auto();}));
 if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){ auto(); }
+
+// ---- Contact form (Supabase) ----
+// SETUP: paste your Supabase project URL and anon (public) key below,
+// and run supabase-setup.sql in your Supabase SQL editor first.
+// Until these are filled in, the form falls back to opening an email draft.
+const SUPABASE_URL = "";      // e.g. "https://abcdefgh.supabase.co"
+const SUPABASE_ANON_KEY = ""; // your anon public key (safe to expose in frontend)
+
+const form = document.getElementById('inquiry-form');
+if (form) form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const status = document.getElementById('f-status');
+  const btn = document.getElementById('f-submit');
+  const data = Object.fromEntries(new FormData(form));
+  if (data.website) return; // honeypot — silently drop bots
+  if (!data.name || !data.email || !data.message) {
+    status.className = 'form-status err';
+    status.textContent = 'Please fill in your name, email, and message.';
+    return;
+  }
+  if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
+    // Fallback: open a pre-filled email draft
+    const body = encodeURIComponent(`Name: ${data.name}\nService: ${data.service}\n\n${data.message}`);
+    window.location.href = `mailto:darcant01@gmail.com?subject=${encodeURIComponent('Inquiry from ' + data.name)}&body=${body}`;
+    return;
+  }
+  btn.disabled = true; btn.textContent = 'Sending…';
+  try {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/inquiries`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey': SUPABASE_ANON_KEY,
+        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+        'Prefer': 'return=minimal'
+      },
+      body: JSON.stringify({ name: data.name, email: data.email, service: data.service, message: data.message })
+    });
+    if (!res.ok) throw new Error('Request failed');
+    form.reset();
+    status.className = 'form-status ok';
+    status.textContent = '✓ Sent! I\'ll get back to you within a few hours.';
+    btn.textContent = 'Send inquiry';
+  } catch (err) {
+    status.className = 'form-status err';
+    status.textContent = 'Something went wrong — please email me directly at darcant01@gmail.com.';
+    btn.textContent = 'Send inquiry';
+  } finally {
+    btn.disabled = false;
+  }
+});
 
 // ---- Scroll reveal ----
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
