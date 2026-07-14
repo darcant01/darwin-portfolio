@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://darwin-portfolio-livid.vercel.app/sitemap.xml
