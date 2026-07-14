@@ -206,6 +206,10 @@ body,header,.svc,.step,.quote,.faq,.chip,.contact-card,.clock,.btn-ghost,.field 
 }
 .theme-toggle:hover{border-color:var(--sun);transform:rotate(15deg)}
 .theme-toggle:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+/* ---------- Content protection ---------- */
+body{-webkit-user-select:none;-moz-user-select:none;user-select:none}
+input,textarea,select{-webkit-user-select:text;-moz-user-select:text;user-select:text}
+img,svg{-webkit-user-drag:none;user-drag:none}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
@@ -1049,6 +1053,23 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:.82rem;color:va
 </footer>
 
 <script>
+// ---- Content protection ----
+// Note: this deters casual copying only. To remove, delete this block
+// and the "Content protection" CSS rules.
+document.addEventListener('contextmenu', e => {
+  // Allow right-click inside the contact form (paste, spellcheck, etc.)
+  if (e.target.closest('input, textarea, select')) return;
+  e.preventDefault();
+});
+document.addEventListener('copy', e => {
+  if (e.target.closest && e.target.closest('input, textarea')) return; // form fields copy normally
+  const selection = window.getSelection().toString();
+  if (!selection) return;
+  e.clipboardData.setData('text/plain',
+    selection + '\n\n— From the portfolio of Darwin Cantillo\nhttps://darwin-portfolio-livid.vercel.app/');
+  e.preventDefault();
+});
+
 // ---- Theme toggle ----
 const themeBtn = document.getElementById('theme-toggle');
 function currentTheme(){ return document.documentElement.getAttribute('data-theme') || 'light'; }
